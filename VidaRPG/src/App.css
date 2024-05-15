@@ -1,0 +1,9 @@
+.personalidad{
+    text-align: center;
+}
+.container{
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+    overflow-x: hidden;
+}

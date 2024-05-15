@@ -1,0 +1,33 @@
+.seccion1Diseño {
+  max-width: 250px;
+  padding-bottom: 50px;
+}
+.titulardo {
+  font-size: 30px;
+  animation: color-gradient 2s infinite alternate;
+  text-align: center;
+}
+@keyframes color-gradient {
+  0% {
+    color: #a50000; /* Red */
+  }
+  50% {
+    color: rgb(75, 0, 173); /* Dark red */
+  }
+  100% {
+    color: #000000; /* Red */
+  }
+}
+.RewardButton {
+  background-color: rgb(255, 119, 144);
+  transition: 0.5s ;
+  border-radius: 20px;
+  width: 250px;
+  &:hover {
+    transition: 0.5s ;
+    background-color: rgb(89, 0, 137);
+    
+    cursor: pointer;
+  }
+}
+
