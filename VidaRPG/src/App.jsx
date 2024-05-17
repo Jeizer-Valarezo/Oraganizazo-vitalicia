@@ -11,28 +11,33 @@ import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
-  const { totalPuntos, recompensaComprada } = useSelector(state => state.puntos);
+  const totalPuntos = useSelector(state => state.puntos.totalPuntos);
+  const recompensaComprada = useSelector(state => state.puntos.recompensaComprada);
   const [diaSemana, setDiaSemana] = useState(""); 
   const tareas = useTareas(diaSemana);
   const [semanaOffset, setSemanaOffset] = useState(0);
 
   useEffect(() => {
     const today = new Date();
-    const dayOfWeek = today.getDay();
+    const dayOfWeek = today.getDay() ;
     const personalidadesBase = ["Rezaxia", "Nero", "Kuro", "Jeizer"];
-    const personalidades = personalidadesBase.map((p, index) => personalidadesBase[(index + semanaOffset) % personalidadesBase.length]);
-
-    setDiaSemana(personalidades[dayOfWeek]);
-
+    const personalidades = personalidadesBase.map((p, index) => {
+      const newIndex = (index + semanaOffset) % personalidadesBase.length;
+      return personalidadesBase[newIndex];
+    });
+    setDiaSemana(personalidades[dayOfWeek % personalidades.length]);
+  
     if (dayOfWeek === 0) {
-      setSemanaOffset((prevOffset) => (prevOffset + 1) % personalidadesBase.length);
+      setSemanaOffset((prevOffset) => {
+        const newOffset = (prevOffset + 1) % personalidadesBase.length;
+        return newOffset;
+      });
     }
   }, []);
   useEffect(() => {
     localStorage.setItem('puntos', JSON.stringify(totalPuntos));
   }, [totalPuntos]);
-
-
+  
   const handleSumarPuntos = (puntos) => {
     dispatch(sumarPuntos(puntos));
   };
