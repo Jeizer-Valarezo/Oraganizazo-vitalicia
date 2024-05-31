@@ -14,7 +14,7 @@ const Recompensas = ({ puntos, recompensas, onComprar, recompensaComprada }) => 
       <h2 className='titulardo'>Recompensas</h2>
       {recompensas.map((recompensa, index) => (
         <div key={index}>
-          <p>{recompensa.nombre} - {recompensa.precio} puntos</p>
+          <p>{recompensa.nombre}</p>
           <button className="RewardButton" onClick={() => handleComprarClick(recompensa.precio)} disabled={recompensa.comprada}>
             {recompensa.comprada ? 'Recompensa ya comprada' : `Comprar por ${recompensa.precio} puntos`}
           </button>

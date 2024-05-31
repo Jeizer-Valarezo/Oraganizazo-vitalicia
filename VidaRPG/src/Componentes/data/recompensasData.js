@@ -1,12 +1,9 @@
 const recompensas = [
-    { nombre: "Pajilla", precio: 7 },
-    { nombre: "Musica", precio: 1 },
-    { nombre: "Jugar Cod - Mobile Legends", precio: 3 },
-    { nombre: "IdleSlayer", precio: 1 },
-    { nombre: "Dia libre", precio: 10 },
-    { nombre: "Anime", precio: 3 },
-    { nombre: "Youtube", precio: 3 },
-    { nombre: "Instagram", precio: 3 },
+    { nombre: "1 Pajilla", precio: 7 },
+    { nombre: "Videojuegos 1.5 horas ", precio: 2 },
+    { nombre: "YouTube", precio: 3 },
+    { nombre: "Procrastinar 1 hora", precio: 1 },
+    { nombre: "Sin restricciones", precio: 18 },
   ];
   
   export default recompensas;
