@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const today = new Date();
     const dayOfWeek = today.getDay() ;
-    const personalidadesBase = ["Rezaxia", "Nero", "Kuro", "Jeizer"];
+    const personalidadesBase = ["Rezaxia", "Shiro", "Kuro", "Jeizer"];
     const personalidades = personalidadesBase.map((p, index) => {
       const newIndex = (index + semanaOffset) % personalidadesBase.length;
       return personalidadesBase[newIndex];
